@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Қазақ тілін қолдануға арналған IT өнімдер — облыстық байқау</title>
+<meta name="description" content="Қызылорда облысының қоғамдық даму басқармасы ұйымдастырған «Қазақ тілін қолдануға арналған IT өнімдер» облыстық байқауы. Байқау 2026 жылғы 6 қарашада өтеді." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230B1F3A'/%3E%3Cpath d='M20 6 C13 6 9 12 11 18 C12 15 15 13 17 15' stroke='%23F2B705' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M20 6 C27 6 31 12 29 18 C28 15 25 13 23 15' stroke='%2300AFCA' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Crect x='16' y='16' width='8' height='8' transform='rotate(45 20 20)' fill='%23F2B705'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --azur:#00AFCA; --azur-d:#008CA3; --azur-l:#D6F4F8; --azur-ll:#ECFBFD;
+  --gold:#F2B705; --gold-d:#C79400; --gold-l:#FCEFC7;
+  --navy:#0B1F3A; --navy-2:#122C4E; --navy-3:#1C3E6A;
+  --ink:#0B1F3A; --ink-2:#4A5A72; --ink-3:#8493A8;
+  --bg:#F6F9FB; --card:#FFFFFF; --line:#E3EBF1;
+  --red:#D64848; --red-l:#FCE8E8;
+  --green:#1FA26A; --green-l:#E1F5EB;
+  --r:20px; --r-sm:14px;
+  --sh:0 6px 24px rgba(11,31,58,.07);
+  --sh-lg:0 20px 50px rgba(11,31,58,.16);
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Manrope','Noto Sans',system-ui,sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;background:var(--bg);overflow-x:hidden}
+h1,h2,h3,.font-d{font-family:'Manrope','Noto Sans',system-ui,sans-serif;letter-spacing:-.3px}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--azur);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#C7D6E2;border-radius:20px;border:2px solid var(--bg)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:100;background:rgba(246,249,251,.86);backdrop-filter:blur(18px) saturate(180%);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{width:42px;height:42px;flex:0 0 auto;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 6px 16px rgba(11,31,58,.25)}
+.brand-mark svg{width:26px;height:26px}
+.brand-t{line-height:1.1}
+.brand-t b{font-family:'Manrope',sans-serif;font-size:14px;font-weight:800;display:block}
+.brand-t span{font-size:11px;color:var(--ink-2);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:13.5px;font-weight:700;color:var(--ink-2);padding:9px 13px;border-radius:10px;transition:.18s;white-space:nowrap}
+.nav-links a:hover{color:var(--ink);background:var(--card);box-shadow:var(--sh)}
+.nav-links a.active{color:var(--azur-d);background:var(--azur-ll)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--azur);color:#fff;font-weight:800;font-size:13.5px;padding:11px 20px;border-radius:12px;box-shadow:0 8px 20px rgba(0,175,202,.32);transition:.18s;white-space:nowrap}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,175,202,.44);background:var(--azur-d)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--line);place-items:center;box-shadow:var(--sh)}
+.burger svg{width:22px;height:22px}
+
+/* mobile menu */
+.mmenu{position:fixed;inset:0;z-index:200;background:rgba(11,31,58,.5);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:.25s}
+.mmenu.show{opacity:1;pointer-events:auto}
+.mmenu-panel{position:absolute;top:0;right:0;bottom:0;width:82%;max-width:340px;background:var(--card);padding:24px 20px;transform:translateX(100%);transition:.3s;overflow-y:auto;box-shadow:var(--sh-lg)}
+.mmenu.show .mmenu-panel{transform:none}
+.mmenu-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.mmenu-close{width:40px;height:40px;border-radius:11px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;font-size:20px}
+.mmenu-panel a{display:block;font-size:16px;font-weight:700;color:var(--ink);padding:14px 16px;border-radius:12px;margin-bottom:4px;transition:.15s}
+.mmenu-panel a:hover{background:var(--azur-ll);color:var(--azur-d)}
+.mmenu-panel .nav-cta{width:100%;justify-content:center;margin-top:14px;padding:14px}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:64px 0 70px;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 88% -10%, rgba(0,175,202,.18), transparent 55%),
+    radial-gradient(700px 400px at -5% 110%, rgba(242,183,5,.14), transparent 55%),
+    linear-gradient(180deg,#F6F9FB 0%,#EFF6FA 100%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%230B1F3A' stroke-width='1' opacity='0.05'%3E%3Cpath d='M70 30 C 52 30 42 44 46 58 C 49 50 56 46 61 50'/%3E%3Cpath d='M70 30 C 88 30 98 44 94 58 C 91 50 84 46 79 50'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-in{position:relative;z-index:1;max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:var(--card);border:1.5px solid var(--line);padding:9px 16px;border-radius:30px;font-size:13px;font-weight:800;color:var(--azur-d);box-shadow:var(--sh);margin-bottom:24px}
+.hero h1{font-size:clamp(30px,5.4vw,54px);font-weight:900;line-height:1.12;color:var(--navy)}
+.hero h1 em{font-style:normal;color:var(--azur-d);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:10px;background:var(--gold-l);z-index:-1;border-radius:4px}
+.hero .slogan{font-size:17px;color:var(--ink-2);font-weight:600;margin:22px 0 30px;max-width:560px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;font-size:15px;padding:15px 28px;border-radius:14px;transition:.2s;white-space:nowrap;position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transition:left .5s}
+.btn:hover::after{left:100%}
+.btn-p{background:var(--azur);color:#fff;box-shadow:0 10px 26px rgba(0,175,202,.36)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,175,202,.48);background:var(--azur-d)}
+.btn-g{background:var(--card);color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--sh)}
+.btn-g:hover{transform:translateY(-3px);border-color:var(--azur);box-shadow:var(--sh-lg)}
+
+/* countdown */
+.count{margin-top:38px;background:var(--navy);border-radius:22px;padding:22px 26px;color:#fff;box-shadow:var(--sh-lg);position:relative;overflow:hidden}
+.count::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1' opacity='0.05'%3E%3Cpath d='M70 30 C 52 30 42 44 46 58 C 49 50 56 46 61 50'/%3E%3Cpath d='M70 30 C 88 30 98 44 94 58 C 91 50 84 46 79 50'/%3E%3C/g%3E%3C/svg%3E");}
+.count-top{display:flex;align-items:center;gap:10px;position:relative;z-index:1;font-weight:800;font-size:14px;color:rgba(255,255,255,.85)}
+.count-top .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(242,183,5,.5);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,183,5,.5)}70%{box-shadow:0 0 0 10px rgba(242,183,5,0)}100%{box-shadow:0 0 0 0 rgba(242,183,5,0)}}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;position:relative;z-index:1}
+.cd{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 8px;text-align:center;backdrop-filter:blur(4px)}
+.cd b{font-family:'Manrope',sans-serif;font-size:clamp(22px,4vw,34px);font-weight:900;line-height:1;display:block;color:#fff}
+.cd span{font-size:12px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px}
+
+/* ============ SECTIONS ============ */
+section{padding:72px 0}
+.sec-head{max-width:680px;margin:0 auto 44px;text-align:center}
+.sec-eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--azur-d);background:var(--azur-ll);padding:7px 15px;border-radius:20px;margin-bottom:16px}
+.sec-head h2{font-size:clamp(24px,4vw,38px);font-weight:900;line-height:1.18;color:var(--navy)}
+.sec-head p{color:var(--ink-2);font-size:16px;margin-top:14px;font-weight:600}
+
+/* about */
+.about{background:var(--card)}
+.org{max-width:760px;margin:0 auto 36px;background:var(--azur-ll);border:1px solid #C7EEF4;border-left:5px solid var(--azur);border-radius:var(--r-sm);padding:22px 24px}
+.org b{font-size:15px;color:var(--azur-d)}
+.org p{font-size:15px;color:var(--ink-2);font-weight:600;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:960px;margin:0 auto}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:26px 18px;text-align:center;transition:.2s}
+.stat:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:var(--azur)}
+.stat .n{font-family:'Manrope',sans-serif;font-size:34px;font-weight:900;color:var(--azur-d);line-height:1}
+.stat .l{font-size:13.5px;color:var(--ink-2);font-weight:700;margin-top:10px}
+
+/* participants */
+.part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.part{background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:.2s;box-shadow:var(--sh)}
+.part:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:var(--azur)}
+.part .ic{width:52px;height:52px;flex:0 0 auto;border-radius:14px;background:var(--azur-l);display:grid;place-items:center;font-size:26px}
+.part h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.part p{font-size:13.5px;color:var(--ink-2);font-weight:600;line-height:1.5}
+.part-note{margin-top:24px;text-align:center;font-size:15px;font-weight:700;color:var(--navy);background:var(--gold-l);border:1.5px dashed var(--gold);padding:16px 22px;border-radius:var(--r-sm);max-width:720px;margin-left:auto;margin-right:auto}
+.part-note b{color:var(--gold-d)}
+
+/* products */
+.prods{background:var(--card)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prod{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:26px 22px;transition:.22s;position:relative;overflow:hidden}
+.prod::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azur),var(--gold));opacity:0;transition:.22s}
+.prod:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:var(--azur);background:var(--card)}
+.prod:hover::before{opacity:1}
+.prod .ic{width:56px;height:56px;border-radius:15px;background:var(--azur-l);display:grid;place-items:center;font-size:28px;margin-bottom:16px}
+.prod h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.prod p{font-size:13.5px;color:var(--ink-2);font-weight:600;line-height:1.5}
+
+/* not accepted */
+.not{background:linear-gradient(180deg,#FFF7F5,#FDF3F1)}
+.not-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:920px;margin:0 auto}
+.not-item{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid #F3D2CE;border-left:5px solid var(--red);border-radius:var(--r-sm);padding:18px 20px;box-shadow:var(--sh)}
+.not-item .x{width:34px;height:34px;flex:0 0 auto;border-radius:10px;background:var(--red-l);color:var(--red);display:grid;place-items:center;font-size:18px;font-weight:900}
+.not-item h3{font-size:15px;font-weight:800;color:var(--red)}
+.not-item p{font-size:13px;color:var(--ink-2);font-weight:600;margin-top:2px}
+
+/* technical tabs */
+.tech{background:var(--card)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.tab{padding:12px 22px;border-radius:30px;font-weight:800;font-size:14.5px;background:var(--bg);border:1.5px solid var(--line);color:var(--ink-2);transition:.18s;box-shadow:var(--sh)}
+.tab:hover{border-color:var(--azur);color:var(--azur-d)}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 8px 20px rgba(11,31,58,.28)}
+.tabpanel{display:none;max-width:760px;margin:0 auto;animation:fade .4s ease}
+.tabpanel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tabpanel .card-in{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--sh)}
+.tabpanel .card-in h3{font-size:20px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.tabpanel ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.tabpanel li{display:flex;gap:12px;font-size:15px;color:var(--ink-2);font-weight:600;line-height:1.55}
+.tabpanel li .chk{width:24px;height:24px;flex:0 0 auto;border-radius:8px;background:var(--green-l);color:var(--green);display:grid;place-items:center;font-size:14px;font-weight:900;margin-top:1px}
+
+/* materials checklist */
+.mat{background:var(--card)}
+.checks{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.check{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:18px 20px;transition:.18s}
+.check:hover{border-color:var(--azur);box-shadow:var(--sh)}
+.check .cic{width:40px;height:40px;flex:0 0 auto;border-radius:11px;background:var(--azur-l);display:grid;place-items:center;font-size:20px}
+.check h3{font-size:15px;font-weight:800}
+.check p{font-size:12.5px;color:var(--ink-2);font-weight:600;margin-top:2px}
+.check .req{margin-left:auto;font-size:10px;font-weight:800;padding:3px 8px;border-radius:12px;background:var(--red-l);color:var(--red);white-space:nowrap;align-self:center}
+
+/* AI */
+.ai{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.ai::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1' opacity='0.05'%3E%3Cpath d='M70 30 C 52 30 42 44 46 58 C 49 50 56 46 61 50'/%3E%3Cpath d='M70 30 C 88 30 98 44 94 58 C 91 50 84 46 79 50'/%3E%3C/g%3E%3C/svg%3E");}
+.ai .wrap{position:relative;z-index:1}
+.ai .sec-eyebrow{background:rgba(242,183,5,.16);color:var(--gold)}
+.ai h2{color:#fff}
+.ai .ai-box{max-width:760px;margin:0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:30px;backdrop-filter:blur(6px)}
+.ai .ai-tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.ai .ai-tools span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:8px 16px;border-radius:20px;font-size:13.5px;font-weight:700}
+.ai p{color:rgba(255,255,255,.82);font-size:15px;font-weight:600}
+.ai .ai-warn{margin-top:18px;background:rgba(242,183,5,.12);border:1px solid rgba(242,183,5,.3);border-left:5px solid var(--gold);border-radius:var(--r-sm);padding:16px 20px}
+.ai .ai-warn b{color:var(--gold)}
+.ai .ai-warn p{color:rgba(255,255,255,.9)}
+
+/* scoring */
+.score{background:var(--card)}
+.score-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;max-width:960px;margin:0 auto}
+.bars{display:flex;flex-direction:column;gap:16px}
+.bar-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.bar-lbl{font-size:14px;font-weight:700;color:var(--ink)}
+.bar-val{font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;color:var(--azur-d)}
+.bar-track{grid-column:1/-1;height:14px;border-radius:20px;background:var(--bg);border:1px solid var(--line);overflow:hidden}
+.bar-fill{height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,var(--azur),var(--azur-d));transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.score-total{background:var(--navy);border-radius:var(--r);padding:32px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.score-total::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1' opacity='0.05'%3E%3Cpath d='M70 30 C 52 30 42 44 46 58 C 49 50 56 46 61 50'/%3E%3Cpath d='M70 30 C 88 30 98 44 94 58 C 91 50 84 46 79 50'/%3E%3C/g%3E%3C/svg%3E");}
+.donut{position:relative;width:180px;height:180px;margin:0 auto 18px;z-index:1}
+.donut svg{transform:rotate(-90deg)}
+.donut .d-center{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.donut .d-num{font-family:'Manrope',sans-serif;font-size:44px;font-weight:900;line-height:1;color:#fff}
+.donut .d-lbl{font-size:12px;font-weight:700;color:rgba(255,255,255,.6)}
+.score-total p{font-size:14px;color:rgba(255,255,255,.8);font-weight:600;z-index:1;position:relative}
+
+/* prizes podium */
+.prizes{background:linear-gradient(180deg,#F6F9FB,#F0F7FA)}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:18px;max-width:820px;margin:0 auto 32px}
+.pod{flex:1;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 16px;box-shadow:var(--sh);position:relative;transition:.2s}
+.pod:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.pod .medal{font-size:38px;margin-bottom:8px}
+.pod .place{font-family:'Manrope',sans-serif;font-size:15px;font-weight:900;color:var(--ink)}
+.pod .amt{font-family:'Manrope',sans-serif;font-size:26px;font-weight:900;color:var(--azur-d);margin-top:6px}
+.pod .note{font-size:12px;color:var(--ink-2);font-weight:700;margin-top:6px}
+.pod-1{padding-top:40px;padding-bottom:44px;background:linear-gradient(160deg,var(--navy),var(--navy-2));border-color:var(--navy);transform:translateY(-16px)}
+.pod-1 .place{color:var(--gold)}
+.pod-1 .amt{color:#fff}
+.pod-1 .note{color:rgba(255,255,255,.7)}
+.pod-1::before{content:"👑";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
+.pod-2{background:var(--azur-ll);border-color:var(--azur)}
+.pod-3{background:var(--gold-l);border-color:var(--gold)}
+.pod-enc{flex:1.4;text-align:center;background:var(--card);border:1.5px dashed var(--azur);border-radius:var(--r);padding:22px 16px}
+.pod-enc .place{font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:var(--azur-d)}
+.pod-enc .amt{font-family:'Manrope',sans-serif;font-size:22px;font-weight:900;color:var(--azur-d);margin-top:4px}
+.pod-enc .note{font-size:12px;color:var(--ink-2);font-weight:700;margin-top:4px}
+.diploma-note{text-align:center;font-size:14.5px;font-weight:700;color:var(--ink-2);max-width:620px;margin:0 auto}
+.diploma-note b{color:var(--navy)}
+
+/* timeline */
+.timeline{background:var(--card)}
+.tl{max-width:760px;margin:0 auto;position:relative;padding-left:0}
+.tl::before{content:"";position:absolute;left:29px;top:10px;bottom:10px;width:3px;background:linear-gradient(180deg,var(--azur),var(--gold));border-radius:20px}
+.tl-item{display:flex;gap:24px;position:relative;padding:0 0 34px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{width:60px;height:60px;flex:0 0 auto;border-radius:50%;background:var(--card);border:3px solid var(--azur);display:grid;place-items:center;font-size:24px;box-shadow:var(--sh);z-index:1}
+.tl-item:last-child .tl-dot{border-color:var(--gold)}
+.tl-body{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:20px 24px;flex:1;box-shadow:var(--sh)}
+.tl-date{display:inline-block;font-size:12px;font-weight:800;color:var(--azur-d);background:var(--azur-ll);padding:5px 13px;border-radius:16px;margin-bottom:8px}
+.tl-item:last-child .tl-date{color:var(--gold-d);background:var(--gold-l)}
+.tl-body h3{font-size:17px;font-weight:800}
+.tl-body p{font-size:14px;color:var(--ink-2);font-weight:600;margin-top:6px;line-height:1.55}
+.tl-mini{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.tl-mini span{font-size:12.5px;font-weight:800;background:var(--card);border:1px solid var(--line);padding:6px 13px;border-radius:16px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{background:var(--bg)}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);margin-bottom:12px;overflow:hidden;box-shadow:var(--sh);transition:.2s}
+.faq-item.open{border-color:var(--azur);box-shadow:var(--sh-lg)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-size:15.5px;font-weight:800;text-align:left;color:var(--ink)}
+.faq-q .pm{width:30px;height:30px;flex:0 0 auto;border-radius:9px;background:var(--azur-ll);color:var(--azur-d);display:grid;place-items:center;font-size:20px;font-weight:700;transition:.25s}
+.faq-item.open .faq-q .pm{transform:rotate(45deg);background:var(--azur);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 24px 22px;font-size:14.5px;color:var(--ink-2);font-weight:600;line-height:1.65}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);color:#fff;position:relative;overflow:hidden;text-align:center}
+.cta::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1' opacity='0.05'%3E%3Cpath d='M70 30 C 52 30 42 44 46 58 C 49 50 56 46 61 50'/%3E%3Cpath d='M70 30 C 88 30 98 44 94 58 C 91 50 84 46 79 50'/%3E%3Cpath d='M70 110 C 52 110 42 96 46 82 C 49 90 56 94 61 90'/%3E%3Cpath d='M70 110 C 88 110 98 96 94 82 C 91 90 84 94 79 90'/%3E%3C/g%3E%3C/svg%3E");}
+.cta .wrap{position:relative;z-index:1}
+.cta h2{font-size:clamp(26px,4.4vw,42px);font-weight:900;color:#fff;margin-bottom:16px}
+.cta p{font-size:16px;color:rgba(255,255,255,.82);font-weight:600;max-width:540px;margin:0 auto 28px}
+.cta .btn-p{background:var(--gold);color:var(--navy);box-shadow:0 12px 30px rgba(242,183,5,.4)}
+.cta .btn-p:hover{background:#FFC72C}
+.cta .deadline{margin-top:18px;font-size:14px;font-weight:700;color:var(--gold)}
+
+/* footer */
+footer{background:var(--navy);color:#fff;padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+.foot-brand .brand-t b{color:#fff}
+.foot-brand .brand-t span{color:rgba(255,255,255,.6)}
+.foot-brand p{font-size:13.5px;color:rgba(255,255,255,.6);font-weight:600;margin-top:16px;line-height:1.6;max-width:320px}
+.foot-col h4{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:11px;transition:.15s}
+.foot-col a:hover{color:var(--azur)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:24px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);font-weight:600}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .nav-cta.nav-desktop{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .part-grid,.prod-grid{grid-template-columns:repeat(2,1fr)}
+  .score-wrap{grid-template-columns:1fr;gap:28px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:600px){
+  section{padding:52px 0}
+  .hero{padding:44px 0 50px}
+  .hero-actions .btn{flex:1;justify-content:center}
+  .count-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stats,.part-grid,.prod-grid,.not-list,.checks{grid-template-columns:1fr}
+  .tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px}
+  .podium{flex-direction:column;align-items:stretch;gap:14px}
+  .pod-1{transform:none}
+  .tl::before{left:25px}
+  .tl-dot{width:52px;height:52px;font-size:20px}
+  .tl-item{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Негізгі навигация">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Басты бетке">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M20 6 C13 6 9 12 11 18 C12 15 15 13 17 15" stroke="#F2B705" stroke-width="2.4" stroke-linecap="round"/><path d="M20 6 C27 6 31 12 29 18 C28 15 25 13 23 15" stroke="#00AFCA" stroke-width="2.4" stroke-linecap="round"/><path d="M20 34 C13 34 9 28 11 22 C12 25 15 27 17 25" stroke="#00AFCA" stroke-width="2.4" stroke-linecap="round"/><path d="M20 34 C27 34 31 28 29 22 C28 25 25 27 23 25" stroke="#F2B705" stroke-width="2.4" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" transform="rotate(45 20 20)" fill="#F2B705"/></svg>
+      </span>
+      <span class="brand-t"><b>ҚАЗАҚ ТІЛІ · IT</b><span>Облыстық байқау · 2026</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">Байқау туралы</a>
+      <a href="#participants">Қатысушылар</a>
+      <a href="#products">Өнім түрлері</a>
+      <a href="#tech">Талаптар</a>
+      <a href="#scoring">Бағалау</a>
+      <a href="#prizes">Жүлде</a>
+      <a href="#timeline">Кезеңдер</a>
+      <a href="#faq">Сұрақтар</a>
+    </div>
+    <a href="#cta" class="nav-cta nav-desktop">📝 Өтінім беру</a>
+    <button class="burger" id="burger" aria-label="Мәзірді ашу" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mmenu" id="mmenu">
+  <div class="mmenu-panel">
+    <div class="mmenu-head">
+      <span class="brand-t" style="font-weight:800">Мәзір</span>
+      <button class="mmenu-close" id="mmenuClose" aria-label="Мәзірді жабу">✕</button>
+    </div>
+    <a href="#about">Байқау туралы</a>
+    <a href="#participants">Қатысушылар</a>
+    <a href="#products">Өнім түрлері</a>
+    <a href="#tech">Техникалық талаптар</a>
+    <a href="#materials">Материалдар</a>
+    <a href="#ai">ЖИ ережесі</a>
+    <a href="#scoring">Бағалау</a>
+    <a href="#prizes">Жүлде қоры</a>
+    <a href="#timeline">Кезеңдер</a>
+    <a href="#faq">Сұрақ-жауап</a>
+    <a href="#contact">Байланыс</a>
+    <a href="#cta" class="nav-cta">📝 Өтінім беру</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="hero-badge">🏛 Қызылорда облысының қоғамдық даму басқармасы ұйымдастырады</span>
+      <h1>Қазақ тілін қолдануға арналған <em>IT өнімдер</em></h1>
+      <p class="slogan">Заманауи цифрлық технологиялар арқылы қазақ тілін үйренуге, қолдануға, дамытуға және насихаттауға ықпал ететін IT өнімдерді анықтау мен ынталандыру байқауы.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-p">📝 Өтінім беру</a>
+        <a href="#about" class="btn btn-g">📋 Ережемен танысу</a>
+      </div>
+      <div class="count" role="timer" aria-label="Байқауға дейінгі уақыт">
+        <div class="count-top"><span class="dot"></span> Байқауға дейін қалды · 2026 жылғы 6 қараша</div>
+        <div class="count-grid">
+          <div class="cd"><b id="cd-d">00</b><span>күн</span></div>
+          <div class="cd"><b id="cd-h">00</b><span>сағат</span></div>
+          <div class="cd"><b id="cd-m">00</b><span>минут</span></div>
+          <div class="cd"><b id="cd-s">00</b><span>секунд</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Байқау туралы</span>
+      <h2>Цифрлық технологиямен қазақ тілін дамытамыз</h2>
+      <p>Байқау заманауи цифрлық құралдар арқылы қазақ тілін өмірге енгізуге бағытталған ең жақсы IT шешімдерді таңдауға арналған.</p>
+    </div>
+    <div class="org reveal">
+      <b>Ұйымдастырушы — Қызылорда облысының қоғамдық даму басқармасы</b>
+      <p>Байқаудың мақсаты: қазақ тілін үйренуге, қолдануға, дамытуға және насихаттауға ықпал ететін IT өнімдерді анықтау және ынталандыру.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="n">3</div><div class="l">жүлделі орын</div></div>
+      <div class="stat reveal"><div class="n">5</div><div class="l">ынталандыру сыйлығы</div></div>
+      <div class="stat reveal"><div class="n">2–5</div><div class="l">адамнан команда</div></div>
+      <div class="stat reveal"><div class="n">∞</div><div class="l">жас шектеусіз</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTICIPANTS ============ -->
+<section id="participants">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Қатысушылар</span>
+      <h2>Кімдер қатыса алады?</h2>
+      <p>Цифрлық өнім әзірлеуге қызығушылығы бар кез келген тұлға. Жасына шектеу қойылмайды.</p>
+    </div>
+    <div class="part-grid">
+      <div class="part reveal"><span class="ic">🎓</span><div><h3>Студенттер</h3><p>Университет пен колледж студенттері</p></div></div>
+      <div class="part reveal"><span class="ic">💻</span><div><h3>IT мамандары</h3><p>Секторда жұмыс істейтін мамандар</p></div></div>
+      <div class="part reveal"><span class="ic">⌨️</span><div><h3>Бағдарламашылар</h3><p>Жеке немесе команда ретінде</p></div></div>
+      <div class="part reveal"><span class="ic">🎨</span><div><h3>Дизайнерлер</h3><p>UX/UI және визуалды шешім әзірлеушілер</p></div></div>
+      <div class="part reveal"><span class="ic">👩‍🏫</span><div><h3>Оқытушылар</h3><p>Білім беру саласының өкілдері</p></div></div>
+      <div class="part reveal"><span class="ic">📚</span><div><h3>Филологтар</h3><p>Тіл және әдебиет мамандары</p></div></div>
+    </div>
+    <div class="part-note reveal">📍 Байқауға <b>Қызылорда облысы бойынша</b> қатысушылар қабылданады</div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="prods" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Өнім түрлері</span>
+      <h2>Қандай өнімдер қабылданады?</h2>
+      <p>Қазақ тілін қолдануға, үйренуге, дамытуға немесе насихаттауға бағытталған жұмыс істейтін IT өнімдер.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod reveal"><div class="ic">🌐</div><h3>Веб-қосымша / платформа</h3><p>Интернет арқылы ашылатын веб-шешім</p></div>
+      <div class="prod reveal"><div class="ic">📱</div><h3>Мобильді қосымша</h3><p>Android/iOS қосымша (APK)</p></div>
+      <div class="prod reveal"><div class="ic">🎓</div><h3>Білім беру платформасы</h3><p>Оқу жүйесі, курстар, тапсырмалар</p></div>
+      <div class="prod reveal"><div class="ic">🎮</div><h3>Ойын</h3><p>Компьютерлік немесе мобильді ойын</p></div>
+      <div class="prod reveal"><div class="ic">🤖</div><h3>Виртуалды ассистент</h3><p>Дауысты/мәтінді ассистент</p></div>
+      <div class="prod reveal"><div class="ic">🧠</div><h3>AI жүйесі</h3><p>Жасанды интеллект негізіндегі жүйе</p></div>
+      <div class="prod reveal"><div class="ic">🥽</div><h3>AR / VR / 3D</h3><p>Ұлту, виртуалды шешімдер</p></div>
+      <div class="prod reveal"><div class="ic">⚡</div><h3>Интерактивті сервис</h3><p>Цифрлық интерактивті қызмет</p></div>
+      <div class="prod reveal"><div class="ic">🏛</div><h3>Мәдени мұра платформасы</h3><p>Қазақ тілі мен мұрасын насихаттайтын</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOT ACCEPTED ============ -->
+<section class="not" id="not">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow" style="background:var(--red-l);color:var(--red)">Ескерту</span>
+      <h2>Қабылданбайтын жобалар</h2>
+      <p>Мынадай жұмыстар жеке жоба ретінде қабылданбайды:</p>
+    </div>
+    <div class="not-list">
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>Қарапайым мәтіндік чат-бот</h3><p>Тек мәтінмен шектелген бот жолы</p></div></div>
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>Бір беттік қарапайым сайт</h3><p>Лендинг немесе макет ғана</p></div></div>
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>Тек презентация / макет</h3><p>Жұмыс істемейтін дизайн үлгісі</p></div></div>
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>localhost / 127.0.0.1</h3><p>Тек қатысушының құрылғысында жұмыс істейтін</p></div></div>
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>Жұмыс істемейтін жоба</h3><p>Техникалық тұрғыдан тексеруге келмейтін</p></div></div>
+      <div class="not-item reveal"><span class="x">✕</span><div><h3>Плагият</h3><p>Басқа тұлғаның жұмысын иемденген</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH TABS ============ -->
+<section class="tech" id="tech">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Техникалық талаптар</span>
+      <h2>Өнім қандай форматта болуы тиіс?</h2>
+      <p>Өнім түріңізге сәйкес тақтаны таңдап, талаптармен танысыңыз.</p>
+    </div>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab active" data-tab="web">🌐 Веб</button>
+      <button class="tab" data-tab="mobile">📱 Мобильді</button>
+      <button class="tab" data-tab="pc">🖥 Компьютерлік / ойын</button>
+      <button class="tab" data-tab="assistant">🤖 Ассистент</button>
+    </div>
+    <div class="tabpanel active" data-panel="web">
+      <div class="card-in">
+        <h3>🌐 Веб-жобалар</h3>
+        <ul>
+          <li><span class="chk">✓</span> Интернет арқылы ашылатын <b>тұрақты URL-сілтемесі</b> болуы тиіс</li>
+          <li><span class="chk">✓</span> localhost, 127.0.0.1 немесе тек қатысушының компьютерінде жұмыс істейтін нұсқалар <b>қабылданбайды</b></li>
+          <li><span class="chk">✓</span> Басқа компьютерден немесе мобильді құрылғыдан ашылуы тиіс</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tabpanel" data-panel="mobile">
+      <div class="card-in">
+        <h3>📱 Мобильді қосымшалар</h3>
+        <ul>
+          <li><span class="chk">✓</span> Android қосымшалары орнатуға дайын <b>.apk файлы</b> түрінде ұсынылады</li>
+          <li><span class="chk">✓</span> APK басқа Android құрылғысына орнатылып, жұмыс істеуі тиіс</li>
+          <li><span class="chk">✓</span> Тек эмуляторда жұмыс істейтін жоба қабылданбайды</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tabpanel" data-panel="pc">
+      <div class="card-in">
+        <h3>🖥 Компьютерлік бағдарламалар мен ойындар</h3>
+        <ul>
+          <li><span class="chk">✓</span> <b>.exe, installer немесе дайын build</b> түрінде ұсынылады</li>
+          <li><span class="chk">✓</span> Басқа компьютерге көшірілгеннен кейін іске қосылуы тиіс</li>
+          <li><span class="chk">✓</span> Unity, Unreal, Visual Studio сияқты әзірлеу ортасын ашу <b>талап етілмейді</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tabpanel" data-panel="assistant">
+      <div class="card-in">
+        <h3>🤖 Виртуалды ассистенттер мен интерактивті жүйелер</h3>
+        <ul>
+          <li><span class="chk">✓</span> Тек мәтіндік жауаппен шектелмеуі тиіс</li>
+          <li><span class="chk">✓</span> Визуалды интерфейс пен пайдаланушымен интерактивті әрекеттесу мүмкіндігі болуы тиіс</li>
+          <li><span class="chk">✓</span> Қажет болса дауыс, анимация, 2D/3D аватар немесе басқа визуалды элементтер қолданылуы мүмкін</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIALS ============ -->
+<section class="mat" id="materials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Қажетті материалдар</span>
+      <h2>Өтінімге не тіркесіледі?</h2>
+      <p>Толық толтырылмаған немесе сілтемелері ашылмайтын өтінімдер қарастырылмайды.</p>
+    </div>
+    <div class="checks">
+      <div class="check reveal"><span class="cic">📝</span><div><h3>Өтінім</h3><p>Google Form арқылы электрондық</p></div><span class="req">Міндетті</span></div>
+      <div class="check reveal"><span class="cic">📄</span><div><h3>Қысқаша сипаттама</h3><p>Жобаның мәні мен мақсаты</p></div><span class="req">Міндетті</span></div>
+      <div class="check reveal"><span class="cic">🔗</span><div><h3>URL / APK / EXE / build</h3><p>Жұмыс істейтін өнімге сілтеме</p></div><span class="req">Міндетті</span></div>
+      <div class="check reveal"><span class="cic">📘</span><div><h3>Нұсқаулық</h3><p>Өнімді іске қосу жөнінде қысқаша</p></div></div>
+      <div class="check reveal"><span class="cic">🔐</span><div><h3>Тест логин / пароль</h3><p>Қажет болған жағдайда</p></div></div>
+      <div class="check reveal"><span class="cic">🎬</span><div><h3>Демо бейнеролик</h3><p>Жобаның қысқа видеосы</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI ============ -->
+<section class="ai" id="ai">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Жасанды интеллект ережесі</span>
+      <h2>AI құралдарын қолдануға рұқсат бар</h2>
+    </div>
+    <div class="ai-box reveal">
+      <p>Жобаны әзірлеу барысында жасанды интеллект құралдарын қолдануға <b>толық рұқсат етіледі</b>:</p>
+      <div class="ai-tools">
+        <span>ChatGPT</span><span>Gemini</span><span>Claude</span><span>GitHub Copilot</span><span>басқа AI құралдар</span>
+      </div>
+      <div class="ai-warn">
+        <p><b>Маңызды:</b> қатысушы жобаның қалай жұмыс істейтінін, қандай технологиялар қолданылғанын және жасанды интеллект <b>қай бөлікте</b> пайдаланылғанын түсіндіре алуы тиіс.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCORING ============ -->
+<section class="score" id="scoring">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Бағалау</span>
+      <h2>Жобалар 100 балдық жүйемен бағаланады</h2>
+      <p>Қазылар алқасы төмендегі критерийлер бойынша жұмыстарды бағалайды.</p>
+    </div>
+    <div class="score-wrap">
+      <div class="bars reveal" id="scoreBars">
+        <div class="bar-row"><span class="bar-lbl">Қазақ тілін қолдану сапасы мен үлесі</span><span class="bar-val">25</span><div class="bar-track"><div class="bar-fill" data-w="25"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">Функционалдық толықтығы</span><span class="bar-val">20</span><div class="bar-track"><div class="bar-fill" data-w="20"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">Визуалдық сапа, дизайн және UX/UI</span><span class="bar-val">20</span><div class="bar-track"><div class="bar-fill" data-w="20"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">Интерактивтілік және технологиялық шешім</span><span class="bar-val">15</span><div class="bar-track"><div class="bar-fill" data-w="15"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">Техникалық орындалуы және жұмыс қабілеттілігі</span><span class="bar-val">10</span><div class="bar-track"><div class="bar-fill" data-w="10"></div></div></div>
+        <div class="bar-row"><span class="bar-lbl">Практикалық қолдану және дамыту мүмкіндігі</span><span class="bar-val">10</span><div class="bar-track"><div class="bar-fill" data-w="10"></div></div></div>
+      </div>
+      <div class="score-total reveal">
+        <div class="donut">
+          <svg width="180" height="180" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="74" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="16"/>
+            <circle id="donutRing" cx="90" cy="90" r="74" fill="none" stroke="url(#gd)" stroke-width="16" stroke-linecap="round" stroke-dasharray="465" stroke-dashoffset="465"/>
+            <defs><linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00AFCA"/><stop offset="1" stop-color="#F2B705"/></linearGradient></defs>
+          </svg>
+          <div class="d-center"><div><div class="d-num" id="donutNum">0</div><div class="d-lbl">балл барлығы</div></div></div>
+        </div>
+        <p>6 критерий бойынша қосынды балл — 100</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ PRIZES ============ -->
+<section class="prizes" id="prizes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Жүлде қоры</span>
+      <h2>Жеңімпаздарды марапаттау</h2>
+      <p>Қазылар алқасының қорытынды бағасы бойынша жүлделі орындар анықталады.</p>
+    </div>
+    <div class="podium">
+      <div class="pod pod-2 reveal">
+        <div class="medal">🥈</div>
+        <div class="place">II орын</div>
+        <div class="amt">70 000 ₸</div>
+        <div class="note">1 жоба</div>
+      </div>
+      <div class="pod pod-1 reveal">
+        <div class="medal">🥇</div>
+        <div class="place">I орын</div>
+        <div class="amt">100 000 ₸</div>
+        <div class="note">1 жоба</div>
+      </div>
+      <div class="pod pod-3 reveal">
+        <div class="medal">🥉</div>
+        <div class="place">III орын</div>
+        <div class="amt">50 000 ₸</div>
+        <div class="note">1 жоба</div>
+      </div>
+      <div class="pod-enc reveal">
+        <div class="place">Ынталандыру</div>
+        <div class="amt">30 000 ₸</div>
+        <div class="note">5 жобаның әрқайсысына</div>
+      </div>
+    </div>
+    <p class="diploma-note reveal">🎓 Жүлдегерлер <b>арнайы дипломдармен</b> және ақшалай сыйлықтармен марапатталады.</p>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="timeline" id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Кезеңдер</span>
+      <h2>Байқау кестесі</h2>
+      <p>Мерзімдер мен негізгі кезеңдермен танысыңыз.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-dot">📝</div>
+        <div class="tl-body">
+          <span class="tl-date">30 қазанға дейін</span>
+          <h3>Өтінім қабылдау</h3>
+          <p>Уйымдастырушылар ұсынған Google Form арқылы электрондық өтінім толтыру.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">🎤</div>
+        <div class="tl-body">
+          <span class="tl-date">6 қараша</span>
+          <h3>Байқау күні</h3>
+          <p>Жобаларды тікелей көрсету және таныстыру.</p>
+          <div class="tl-mini"><span>⏱ 5 мин — таныстыру</span><span>❓ 3 мин — сұрақтар</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">🏆</div>
+        <div class="tl-body">
+          <span class="tl-date">Жеңімпаздар</span>
+          <h3>Марапаттау рәсімі</h3>
+          <p>Қорытынды баға бойынша жеңімпаздар анықталып, дипломдар мен ақшалай сыйлықтар табысталады.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Сұрақ-жауап</span>
+      <h2>Жиі қойылатын сұрақтар</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Қандай өнімдер қабылданады? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Веб-қосымша, мобильді қосымша, білім беру платформасы, ойын, виртуалды ассистент, AI жүйесі, AR/VR/3D, интерактивті сервис немесе қазақ тілі мен мәдени мұраны насихаттайтын цифрлық платформа. Өнімнің жұмыс істейтіндігі міндетті.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Жеке қатыса аламын ба, әлде команда болуы керек пе? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Жоба жеке қатысушы немесе 2–5 адамнан тұратын команда атынан ұсынылуы мүмкін. Жас шектеуі қойылмайды.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Жасанды интеллект (AI) қолдануға бола ма? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Иә, ChatGPT, Gemini, Claude, GitHub Copilot және басқа AI құралдарын қолдануға рұқсат. Бірақ қатысушы жобаның қалай жұмыс істейтінін және AI қай бөлікте пайдаланылғанын түсіндіре алуы тиіс.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">localhost немесе эмулятордағы жоба қабылдана ма? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Жоқ. Веб-жобаларда тұрақты URL міндетті, APK басқа құрылғыға орнатылуы керек, EXE басқа компьютерде іске қосылуы керек. localhost, 127.0.0.1 немесе тек эмуляторда жұмыс істейтін жобалар қабылданбайды.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">APK немесе EXE файлын қайда жүктеп, сілтеме қоямын? <span class="pm">+</span></button>
+        <div class="faq-a"><p>APK, EXE және басқа көлемді файлдарды Google Drive немесе басқа бұлттық сақтау сервисіне жүктеп, қарауға/жүктеп алуға ашық сілтеме арқылы ұсыныңыз.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Байқау қашан және қайда өтеді? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Байқау 2026 жылғы 6 қарашада өткізіледі. Әр қатысушыға 5 минут таныстыру және 3 минут қазылар сұрағына жауап беру уақыты беріледі.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Қандай жобалар қабылданбайды? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Жұмыс істемейтін, тек презентация/макет түріндегі, тек localhost режиміндегі, басқа тұлғаның жұмысын иемденген (плагиат) және қазақ тілін қолдану мақсаты анық көрінбейтін жобалар.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <h2>Жобаңды бүгін тіркел!</h2>
+    <p>2026 жылғы 30 қазанға дейін электрондық өтінім толтырып, байқауға қатысуға өтінім бер.</p>
+    <a href="https://forms.google.com/СІЛТЕМЕ-МІНДЕ" class="btn btn-p" target="_blank" rel="noopener">📝 Google Form — Өтінім беру</a>
+    <p class="deadline">⏰ Өтінім қабылдау мерзімі: 2026 жылғы 30 қазан</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 6 C13 6 9 12 11 18 C12 15 15 13 17 15" stroke="#F2B705" stroke-width="2.4" stroke-linecap="round"/><path d="M20 6 C27 6 31 12 29 18 C28 15 25 13 23 15" stroke="#00AFCA" stroke-width="2.4" stroke-linecap="round"/><path d="M20 34 C13 34 9 28 11 22 C12 25 15 27 17 25" stroke="#00AFCA" stroke-width="2.4" stroke-linecap="round"/><path d="M20 34 C27 34 31 28 29 22 C28 25 25 27 23 25" stroke="#F2B705" stroke-width="2.4" stroke-linecap="round"/><rect x="16" y="16" width="8" height="8" transform="rotate(45 20 20)" fill="#F2B705"/></svg>
+          </span>
+          <span class="brand-t"><b>ҚАЗАҚ ТІЛІ · IT</b><span>Облыстық байқау · 2026</span></span>
+        </a>
+        <p>Қызылорда облысының қоғамдық даму басқармасы ұйымдастырған «Қазақ тілін қолдануға арналған IT өнімдер» облыстық байқауының ресми сайты.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Жылдам сілтемелер</h4>
+        <a href="#about">Байқау туралы</a>
+        <a href="#products">Өнім түрлері</a>
+        <a href="#scoring">Бағалау критерийлері</a>
+        <a href="#prizes">Жүлде қоры</a>
+        <a href="#timeline">Кезеңдер</a>
+      </div>
+      <div class="foot-col">
+        <h4>Байланыс</h4>
+        <p>🏛 Қызылорда облысының<br/>қоғамдық даму басқармасы</p>
+        <a href="mailto:qazaqtilhack@gmail.com">✉️ qazaqtilhack@gmail.com</a>
+        <p>📅 Байқау: 2026 жылғы 6 қараша</p>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 «Қазақ тілін қолдануға арналған IT өнімдер» облыстық байқауы. Барлық құқықтар қорғалған.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Кері санақ таймер (2026-11-06) ---------- */
+  var target = new Date("2026-11-06T00:00:00").getTime();
+  var dEl=document.getElementById("cd-d"), hEl=document.getElementById("cd-h"),
+      mEl=document.getElementById("cd-m"), sEl=document.getElementById("cd-s");
+  function pad(n){return (n<10?"0":"")+n;}
+  function tick(){
+    var now=Date.now(); var diff=target-now;
+    if(diff<0) diff=0;
+    var d=Math.floor(diff/864e5),
+        h=Math.floor(diff%864e5/36e5),
+        m=Math.floor(diff%36e5/6e4),
+        s=Math.floor(diff%6e4/1e3);
+    if(dEl) dEl.textContent=pad(d);
+    if(hEl) hEl.textContent=pad(h);
+    if(mEl) mEl.textContent=pad(m);
+    if(sEl) sEl.textContent=pad(s);
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---------- Мобильді мәзір ---------- */
+  var mmenu=document.getElementById("mmenu"),
+      burger=document.getElementById("burger"),
+      mclose=document.getElementById("mmenuClose");
+  function openMenu(){mmenu.classList.add("show"); if(burger)burger.setAttribute("aria-expanded","true");}
+  function closeMenu(){mmenu.classList.remove("show"); if(burger)burger.setAttribute("aria-expanded","false");}
+  if(burger) burger.addEventListener("click",openMenu);
+  if(mclose) mclose.addEventListener("click",closeMenu);
+  if(mmenu) mmenu.addEventListener("click",function(e){if(e.target===mmenu)closeMenu();});
+  document.querySelectorAll(".mmenu-panel a").forEach(function(a){a.addEventListener("click",closeMenu);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu();});
+
+  /* ---------- Tab (техникалық талаптар) ---------- */
+  var tabs=document.querySelectorAll(".tab");
+  tabs.forEach(function(t){
+    t.addEventListener("click",function(){
+      var id=t.getAttribute("data-tab");
+      tabs.forEach(function(x){x.classList.remove("active");});
+      t.classList.add("active");
+      document.querySelectorAll(".tabpanel").forEach(function(p){
+        p.classList.toggle("active",p.getAttribute("data-panel")===id);
+      });
+    });
+  });
+
+  /* ---------- FAQ аккордеон ---------- */
+  document.querySelectorAll(".faq-q").forEach(function(q){
+    q.addEventListener("click",function(){
+      var item=q.closest(".faq-item");
+      var a=item.querySelector(".faq-a");
+      var open=item.classList.toggle("open");
+      q.setAttribute("aria-expanded",open?"true":"false");
+      if(open){ a.style.maxHeight=a.scrollHeight+"px"; }
+      else{ a.style.maxHeight="0px"; }
+    });
+  });
+
+  /* ---------- Scroll-spy (мәзірде белсенді бөлім) ---------- */
+  var links=document.querySelectorAll("#navLinks a");
+  var sections=[];
+  links.forEach(function(a){
+    var id=a.getAttribute("href").slice(1);
+    var el=document.getElementById(id);
+    if(el) sections.push({a:a, el:el});
+  });
+  function onScroll(){
+    var pos=window.scrollY+120, current=null;
+    sections.forEach(function(s){ if(s.el.offsetTop<=pos) current=s; });
+    links.forEach(function(a){a.classList.remove("active");});
+    if(current) current.a.classList.add("active");
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add("in");
+          io.unobserve(en.target);
+          // score bars анимациясы
+          if(en.target.id==="scoreBars") fillBars();
+          if(en.target.classList.contains("score-total")) fillDonut();
+        }
+      });
+    },{threshold:.15});
+    revealEls.forEach(function(el){io.observe(el);});
+  } else {
+    revealEls.forEach(function(el){el.classList.add("in");});
+  }
+
+  /* ---------- Score bars ---------- */
+  var barsDone=false;
+  function fillBars(){
+    if(barsDone) return; barsDone=true;
+    document.querySelectorAll(".bar-fill").forEach(function(b){
+      b.style.width=(b.getAttribute("data-w"))+"%";
+    });
+  }
+
+  /* ---------- Donut 100 ---------- */
+  var donutDone=false;
+  function fillDonut(){
+    if(donutDone) return; donutDone=true;
+    var ring=document.getElementById("donutRing");
+    var numEl=document.getElementById("donutNum");
+    if(ring){
+      var C=2*Math.PI*74; // ~465
+      ring.style.transition="stroke-dashoffset 1.3s cubic-bezier(.2,.7,.2,1)";
+      requestAnimationFrame(function(){ ring.style.strokeDashoffset="0"; });
+    }
+    if(numEl){
+      var start=0, end=100, dur=1300, t0=performance.now();
+      function step(t){
+        var p=Math.min((t-t0)/dur,1);
+        numEl.textContent=Math.round(start+(end-start)*p);
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+  }
+})();
+</script>
+</body>
+</html>
